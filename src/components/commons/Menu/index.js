@@ -2,6 +2,7 @@ import React from 'react';
 
 import { MenuWrapper } from './styles/MenuWrapper';
 import Logo from '../../../theme/Logo';
+import Button from '../../commons/Button';
 
 const links = [
   {
@@ -27,12 +28,12 @@ function Menu() {
       </MenuWrapper.LeftSide>
       <MenuWrapper.CentralSide>
         {links.map((link) => (
-          <a href={link.url}>{link.texto}</a>
+          <a key={link.url} href={link.url}>{link.texto}</a>
         ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <button>Entrar</button>
-        <button>Cadastrar</button>
+        <Button variant="secondary.main" ghost>Entrar</Button>
+        <Button variant="primary.main">Cadastrar</Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   )
