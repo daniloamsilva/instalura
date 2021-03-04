@@ -63,13 +63,11 @@ function FormContent() {
 
             throw new Error('Não foi possível cadastrar o usuário agora :(');
           })
-          .then(respostaConvertidaEmObjeto => {
+          .then(() => {
             setSubmissionsStatus(formStates.DONE);
-            console.log(respostaConvertidaEmObjeto);
           })
-          .catch(error => {
+          .catch(() => {
             setSubmissionsStatus(formStates.ERROR);
-            console.error(error);
           });
       }}
     >
